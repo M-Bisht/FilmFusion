@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  /* background-color: #252525ff; */
+  background-color: black;
+  padding-bottom: 5rem;
+}
+
+/* Hero Section */
+
+.heroSection {
+  width: 100%;
+  position: relative;
+}
+
+.heroSection video {
+  width: 100%;
+}
+
+.heroSectionOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0, 1),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 1)
+  );
+}
+
+/* Emoji Section */
+
+.emojiSection {
+  width: 100%;
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.emojiSection h2 {
+  font-size: 3rem;
+}
+
+.emojiDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.emojiLink {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.emojiSection img {
+  width: 10rem;
+}
+
+/* Movies and series section */
+
+.movieAndSeriesSections {
+  padding-top: 2rem;
+}
+
+.movieAndSeriesSections > h3 {
+  font-size: 2.5rem;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 15rem;
+  padding: 0 2rem;
+  margin-bottom: 5rem;
+}
+
+.swiper-slide {
+  background: #fff;
+  width: 25rem;
+  height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: 101%;
+  width: 45px;
+  margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 1 !important;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-slide > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

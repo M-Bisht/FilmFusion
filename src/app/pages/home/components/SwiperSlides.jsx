@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import options from "@/app/global/components/ApiOptions";
 
 const SwiperSlides = ({ title, path }) => {
   const [movies, setMovies] = useState([]);
+  const swiperContainerRef = useRef(null);
+
+  const mouseEnter = () => {
+    swiperContainerRef.current.style.overflow = "visible";
+  };
+
+  const mouseLeave = () => {
+    swiperContainerRef.current.style.overflow = "";
+  };
 
   const fetchMovies = async () => {
     const url = `https://api.themoviedb.org/3/${path}`;
@@ -23,24 +28,25 @@ const SwiperSlides = ({ title, path }) => {
   return (
     <div className="movieAndSeriesSections">
       <h3>{title}</h3>
-      <Swiper
-        slidesPerView={"auto"}
-        spaceBetween={15}
-        navigation={true}
-        modules={[Navigation]}
-        className="swiper"
-      >
+      <div className="swiperContainer" ref={swiperContainerRef}>
         {movies.map((movie, index) => {
           return (
-            <SwiperSlide key={index}>
+            <div
+              key={index}
+              className="swiperDivs"
+              onMouseEnter={mouseEnter}
+              onMouseLeave={mouseLeave}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                 alt="a"
               />
-            </SwiperSlide>
+            </div>
           );
         })}
-      </Swiper>
+        <button className="one">prev</button>
+        <button className="two">next</button>
+      </div>
     </div>
   );
 };

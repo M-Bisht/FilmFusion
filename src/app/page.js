@@ -1,17 +1,23 @@
-import React from "react";
-import "./pages/home/style.css";
+"use client";
+import React, { useContext } from "react";
+import "./home/style.css";
 import Header from "./global/sections/Header";
-import HeroSection from "./pages/home/sections/HeroSection";
-import EmojiSection from "./pages/home/sections/EmojiSection";
-import MovieAndSeriesSections from "./pages/home/sections/MovieAndSeriesSections";
-
+import HeroSection from "./home/sections/HeroSection";
+import EmojiSection from "./home/sections/EmojiSection";
+import MovieAndSeriesSections from "./home/sections/MovieAndSeriesSections";
+import { MainContext } from "./context/Context";
 const page = () => {
+  const { pageLoading, setPageLoading } = useContext(MainContext);
   return (
     <div className="container">
       <Header />
       <HeroSection />
-      <EmojiSection />
-      <MovieAndSeriesSections />
+      {pageLoading ? null : (
+        <>
+          <EmojiSection />
+          <MovieAndSeriesSections />
+        </>
+      )}
     </div>
   );
 };

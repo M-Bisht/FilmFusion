@@ -6,7 +6,7 @@ import axios from "axios";
 import options from "@/app/global/comps/ApiOptions";
 import Loader from "@/app/global/comps/Loader";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -56,7 +56,6 @@ const page = ({ params }) => {
     genere = "35";
   }
 
-  // console.log(totalPages);
   const windowScroll = (e) => {
     const scrollElm = e.target.scrollingElement;
     let scroll = scrollElm.scrollTop + scrollElm.clientHeight;
@@ -99,4 +98,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

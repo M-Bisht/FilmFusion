@@ -21,7 +21,7 @@ const HeroSection = () => {
         const data = await res.data.results;
         setMovies(data);
         setPageLoading(false);
-      }, 10000);
+      }, 2000);
     } catch (error) {
       console.log("fetch movie error", error);
       setPageLoading(true);

@@ -6,7 +6,7 @@ import HeroSection from "./home/sections/HeroSection";
 import EmojiSection from "./home/sections/EmojiSection";
 import MovieAndSeriesSections from "./home/sections/MovieAndSeriesSections";
 import { MainContext } from "./context/Context";
-const page = () => {
+const Page = () => {
   const { pageLoading, setPageLoading } = useContext(MainContext);
   return (
     <div className="container">
@@ -22,4 +22,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

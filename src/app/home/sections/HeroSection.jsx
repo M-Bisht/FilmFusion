@@ -21,7 +21,7 @@ const HeroSection = () => {
         const data = await res.data.results;
         setMovies(data);
         setPageLoading(false);
-      }, 2000);
+      }, 0);
     } catch (error) {
       console.log("fetch movie error", error);
       setPageLoading(true);
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </SwiperSlide>
           );
         })}
-        {/* <div className="heroSectionOverlay"></div> */}
+        <div className="heroSectionOverlay"></div>
       </Swiper>
       {pageLoading ? <Loader /> : null};
     </>
